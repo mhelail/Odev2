@@ -1,0 +1,66 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app2.ToDoList"
+             Title="Yapılacaklar Listesi">
+
+    <Grid
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+        ColumnDefinitions="*,*,*"
+        RowSpacing="10"
+        ColumnSpacing="0">
+
+
+        <Frame CornerRadius="10" Padding="5" Margin="10" HasShadow="True" BorderColor="#FF87CEFA" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center">
+            <Label Text="Yapılacaklar Listesi"
+                   TextColor="#FF87CEFA"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+        </Frame>
+
+        <CollectionView
+            x:Name="tasksCollectionView"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="10"
+            VerticalOptions="StartAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10" Padding="10" Margin="0,10,0,10" HasShadow="True" BorderColor="#878681">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="{Binding}" FontSize="16" VerticalOptions="Center" Margin="1"/>
+                            <ImageButton Source="newtask.png"
+                                         WidthRequest="20"
+                                         HeightRequest="20"
+                                         Clicked="EditTask_Clicked"
+                                         Padding="0"
+                                         HorizontalOptions="EndAndExpand"/>
+                            <ImageButton Source="delete.png"
+                                         WidthRequest="20"
+                                         HeightRequest="20"
+                                         Clicked="DeleteTask_Clicked"
+                                         Padding="0"
+                                         HorizontalOptions="End"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center"
+                     Grid.Row="1"
+                     Grid.Column="1">
+            <Button
+                Text="Not Ekle"
+                x:Name="notEkleButton"
+                BackgroundColor="#FF87CEFA"
+                Grid.Row="7"/>
+            <Button
+                Text="Kaydet"
+                x:Name="kaydetButton"
+                BackgroundColor="#FF87CEFA"
+                Margin="0,10,0,0"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

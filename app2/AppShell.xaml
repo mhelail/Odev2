@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:app2"
+       x:Class="app2.AppShell"
+       FlyoutBehavior="Flyout"
+       BackgroundColor="#FFADD8E6"
+       TitleColor="BLUE">
+
+   
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#FF87CEFA" Padding="10, 20">
+            <Label Text="Menü"
+                   TextColor="White"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    
+    <FlyoutItem Title="Ana Sayfa" Icon="home1.png">
+        <ShellContent ContentTemplate="{DataTemplate local:AnaSayfa}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Kredi Hesaplama" Icon="payments.png">
+        <ShellContent ContentTemplate="{DataTemplate local:KrediHesaplama}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Vucut Kitle Indexi" Icon="healthcare.png">
+        <ShellContent ContentTemplate="{DataTemplate local:VucutKitleIndexi}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Renk Secici" Icon="colors.png">
+        <ShellContent ContentTemplate="{DataTemplate local:RenkSecici}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Yapılacaklar" Icon="todolist.png">
+        <ShellContent ContentTemplate="{DataTemplate local:ToDoList}" />
+    </FlyoutItem>
+
+</Shell>
